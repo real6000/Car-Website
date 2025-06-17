@@ -1,0 +1,30 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter username">
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter password">
+            </div>
+            <button type="submit">Login</button>
+            <p id="error-msg" style="display:none; color: #ffcccc; margin-top: 10px;"></p>
+        </form>
+        <div id="success-popup" class="popup hidden">
+            <p>✅ Login Successful! Welcome back.</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
