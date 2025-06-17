@@ -8,12 +8,42 @@ body {
 }
 
 .login-container {
-    width: 300px;
-    margin: 100px auto;
-    background: #1f1f2e;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  width: 300px;
+  margin: 100px auto;
+  background-color: #1e1e2f;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  text-align: center;
+}
+
+.login-container h2 {
+  color: #eee;
+  margin-bottom: 20px;
+}
+
+.login-container input {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+}
+
+.login-container button {
+  width: 95%;
+  padding: 10px;
+  background-color: #00adb5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.login-container button:hover {
+  background-color: #019aa0;
 }
 
 .input-group {
@@ -75,38 +105,38 @@ button:hover {
     display: none;
 }
 
-.loading-overlay{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:#10101aee;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index:2000;
-    transition: opacity 0.5s ease;
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #10101aee;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  transition: opacity 0.5s ease;
 }
 
-.loading-overlay.hidden{
-    opacity: 0;
-    pointer-events: none;
-    visibility: hidden;
+.loading-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
 }
 
-.spinner{
-    border:6px solid #eee;
-    border-top: 6px solid #00adb5;
-    border-radius:50%;
-    width:60px;
-    height:60px;
-    animation: spin 1s linear infinite;
-    margin-bottom: 15px;
+.spinner {
+  border: 6px solid #eee;
+  border-top: 6px solid #00adb5;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 15px;
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
 }

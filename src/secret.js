@@ -1,18 +1,17 @@
-function checkSpecialPassword(){
-    const input=document.getElementById("specialPassword").value.trim();
-    const error = document.getElementById("specialError");
-    const overlay = document.getElementById("loadingOverlay");
+function checkSpecialPassword() {
+  const input = document.getElementById("specialPassword").value.trim();
+  const error = document.getElementById("specialError");
+  const overlay = document.getElementById("loadingOverlay");
 
-    if(input==="veryspecialpassword"){
-        error.style.display = "none";
-        // Show loading overlay
-        overlay.classList.remove("hidden");
+  if (input === "veryspecialpassword") {
+    error.style.display = "none";
+    overlay.classList.remove("hidden");
 
-        setTimeout(() => {
-            window.location.href = "cars.html";
-        }, 3000); // 3 seconds wait
-    }else{
-        error.textContent = "❌ Invalid spcial password.";
-        error.style.display = "block";
-    }
+    setTimeout(() => {
+      window.location.href = "cars.html";
+    }, 3000);
+  } else {
+    error.textContent = "❌ Incorrect special password.";
+    error.style.display = "block";
+  }
 }
