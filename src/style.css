@@ -1,22 +1,33 @@
 /* style.css */
 body {
-    margin: 0;
-    padding: 0;
-    background: #10101a;
-    font-family: Arial, sans-serif;
-    color: #fff;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom right, #101820, #1c1f2b);
+  /* Remove the following lines to allow scrolling and default layout */
+  /* height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+body.login-page {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .login-container {
-  width: 300px;
-  margin: 100px auto;
-  background-color: #1e1e2f;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
-  text-align: center;
+    width: 300px;
+    margin: 100px auto;
+    background: #1f1f2e;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
-
 .login-container h2 {
   color: #eee;
   margin-bottom: 20px;
@@ -30,7 +41,6 @@ body {
   border-radius: 8px;
   outline: none;
 }
-
 .login-container button {
   width: 95%;
   padding: 10px;
@@ -45,6 +55,55 @@ body {
 .login-container button:hover {
   background-color: #019aa0;
 }
+
+.error-msg {
+  color: #ff4d4d;
+  display: none;
+  margin-top: 5px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Spinner & overlay */
+.loading-overlay {
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:#10101aee;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index:2000;
+    transition: opacity 0.5s ease;
+}
+
+.loading-overlay.hidden{
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.spinner{
+    border:6px solid #eee;
+    border-top: 6px solid #00adb5;
+    border-radius:50%;
+    width:60px;
+    height:60px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 15px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}
+
 
 .input-group {
     margin-bottom: 15px;
@@ -136,7 +195,35 @@ button:hover {
   margin-bottom: 15px;
 }
 
+.subtitle {
+  color: #cccccc;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.animate-in {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
 @keyframes spin {
   0% { transform: rotate(0deg);}
   100% { transform: rotate(360deg);}
 }
+
+@keyframes glowBorder {
+  0% { box-shadow: 0 0 15px #00adb570; }
+  50% { box-shadow: 0 0 30px #00adb5aa; }
+  100% { box-shadow: 0 0 15px #00adb570; }
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
