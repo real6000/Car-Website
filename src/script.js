@@ -26,13 +26,19 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
         
-          if (userDatabase[user] && userDatabase[user] === pass) {
+        if (userDatabase[user] && userDatabase[user] === pass) {
             errorMsg.style.display = 'none';
-            if (user === 'admin') {
-                window.location.href = 'secret.html';
-            } else {
-                window.location.href = 'cars.html';
-            }
+            // Show loading overlay
+            const loading = document.getElementById('loadingOverlay');
+            loading.classList.remove('hidden');
+
+            setTimeout(() => {
+                if (user === 'admin') {
+                    window.location.href = 'secret.html';
+                } else {
+                    window.location.href = 'cars.html';
+                }
+            }, 3000); // 3 seconds wait
         } else {
             errorMsg.textContent = '❌ Invalid username or password.';
             errorMsg.style.display = 'block';
