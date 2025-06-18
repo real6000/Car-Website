@@ -56,6 +56,12 @@
             border-radius: 8px;
         }
     </style>
+        <script>
+        // Admin access check
+        if (sessionStorage.getItem('isAdmin') !== 'true') {
+            window.location.href = 'index.html';
+        }
+    </script>
 </head>
 <body>
     <h1>🚗 Welcome to CarZone</h1>

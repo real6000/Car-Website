@@ -33,11 +33,12 @@ document.addEventListener('DOMContentLoaded', function () {
             loading.classList.remove('hidden');
 
             setTimeout(() => {
-                if (user === 'admin') {
-                    window.location.href = 'secret.html';
-                } else {
-                    window.location.href = 'cars.html';
-                }
+        if (username === "admin" && password === "admin123") {
+            sessionStorage.setItem("isAdminVerified", "true");
+            showLoadingThenRedirect("secret.html");
+        } else {
+            window.location.href = 'cars.html';
+        }
             }, 3000); // 3 seconds wait
         } else {
             errorMsg.textContent = '❌ Invalid username or password.';
